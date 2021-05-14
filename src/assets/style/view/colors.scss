@@ -1,0 +1,38 @@
+.colors {
+   &__title {
+   }
+   &__color {
+      width: 50%;
+      height: 30px;
+      border: 1px solid black;
+      margin: 0 auto;
+   }
+   &__column {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   }
+}
+.colors-form {
+   &__name {
+   }
+   &__color {
+      width: 50px;
+      height: 50px;
+      margin: 20px auto;
+   }
+}
+@media (max-width: 1300px) {
+   .colors {
+      &__block-mini {
+         padding: 0px;
+         width: 100%;
+      }
+      &__color {
+         border: none;
+         width: 100%;
+         height: 50px;
+      }
+   }
+}

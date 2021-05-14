@@ -1,0 +1,25 @@
+.person-page {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   width: 100%;
+}
+.person {
+   &__email {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+   }
+
+   &__pass {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+   }
+}
+.product-add {
+   &__input {
+   }
+}
+.button-add {
+}

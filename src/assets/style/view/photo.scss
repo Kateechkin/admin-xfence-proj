@@ -1,0 +1,143 @@
+.photo {
+   width: 100%;
+   &__title {
+      margin: 0px 0px 40px 0px;
+      h1 {
+         text-align: left;
+         font-size: 2rem;
+         font-weight: normal;
+      }
+   }
+   &__error {
+      color: red;
+      font-weight: 400;
+      font-size: 14px;
+      margin: 0px 0px 10px 0px;
+   }
+   &__block {
+   }
+   &__submit {
+      width: 25%;
+      margin: 0 auto;
+   }
+}
+.photo-item {
+   &__row {
+      width: 15%;
+      margin: 0px auto 50px auto;
+      border-radius: 6px;
+      background: #fff;
+      padding: 1rem;
+      box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+   }
+
+   &__column {
+      // flex: 25%;
+   }
+
+   &__items {
+      // img {
+      //    max-width: 250px;
+      // }
+   }
+
+   &__title {
+   }
+}
+.photo-submit {
+   display: flex;
+   flex-wrap: wrap;
+   &__column {
+      margin-bottom: 0.5rem;
+      margin-right: 0.5rem;
+      flex: 25%;
+   }
+
+   &__items {
+      img {
+         max-width: 250px;
+      }
+   }
+
+   &__title {
+   }
+}
+
+.preview {
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0.5rem;
+}
+
+.preview-image {
+   position: relative;
+   // margin-bottom: 0.5rem;
+   // margin-right: 0.5rem;
+   overflow: hidden;
+}
+
+.preview-image.removing {
+   transform: scale(0);
+   transition: transform 0.3s;
+}
+
+.preview-image img {
+   width: 180px;
+   height: 100%;
+}
+
+.preview-image:hover .preview-remove {
+   opacity: 1;
+}
+
+.preview-image:hover .preview-info {
+   bottom: 0px;
+}
+
+.preview-remove {
+   opacity: 0;
+   width: 20px;
+   height: 20px;
+   position: absolute;
+   right: 0;
+   top: 0;
+   font-weight: bold;
+   background: rgba(255, 255, 255, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   cursor: pointer;
+   transition: opacity 0.22s;
+}
+
+.preview-info {
+   position: absolute;
+   right: 0;
+   bottom: -30px;
+   left: 0;
+   // height: 24px;
+   font-size: 0.7rem;
+   background: rgba(255, 255, 255, 0.5);
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 0 5px;
+   transition: bottom 0.22s;
+}
+.preview-block {
+   display: flex;
+}
+.preview-info-progress {
+   position: absolute;
+   left: 0;
+   top: 0;
+   bottom: 0;
+   background: #42b983;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   transition: width 0.22s;
+}

@@ -1,0 +1,111 @@
+.sidebar {
+   grid-row: sidebar;
+   position: absolute;
+
+   height: 100%;
+   background-color: black;
+   color: #c2c2c2;
+   -webkit-transition: all 0.2s ease-in-out;
+   transition: all 0.2s ease-in-out;
+   &__header {
+      width: 100%;
+      height: 59px;
+      transition: none;
+      p {
+         color: white;
+         margin: 15px 0;
+         font-size: 18px;
+         width: 100%;
+         font-weight: 300;
+         text-align: center;
+      }
+      img {
+         width: 150px;
+      }
+   }
+   &__nav {
+      width: 100%;
+      padding: 30px 10px 10px 10px;
+      overflow-y: auto;
+      overflow-x: hidden;
+   }
+}
+.nav {
+   &__item {
+      display: flex;
+      width: 100%;
+      margin: 0px 0px 7px 0px;
+      padding: 0px 0px 7px 0px;
+      overflow-x: hidden;
+      border-bottom: 1px solid #eaeaea;
+   }
+   &__link {
+      color: #f6f6e9;
+      align-items: center;
+      position: relative;
+      padding-left: 50px;
+      line-height: 43px;
+      border-top: 1px solid transparent;
+   }
+   &__icon {
+      svg {
+         font-size: 1.1rem;
+         display: block;
+         position: absolute;
+         top: 8px;
+         left: 6px;
+         width: 28px;
+         height: 28px;
+         line-height: 28px;
+         text-align: center;
+      }
+   }
+}
+
+.sidebar-wrapper {
+   height: 100%;
+   width: 224px;
+   position: fixed;
+   z-index: 1;
+   top: 0;
+   left: 0;
+   background-color: #111;
+   overflow-x: hidden;
+
+   // position: fixed;
+   // left: 0;
+   // top: 0;
+   // bottom: 0;
+   // overflow-y: auto;
+   // overflow-x: hidden;
+   // width: 224px;
+   -webkit-transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+   transition: width 0.3s ease-in-out, left 0.3s ease-in-out;
+}
+.close {
+   width: 50px;
+}
+.sidebar-static {
+   width: 224px;
+}
+@media (max-width: 1024px) {
+   .sidebar-static {
+      width: 100%;
+   }
+   .sidebar-wrapper {
+      width: initial;
+   }
+   .nav {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      &__item {
+         border: none;
+      }
+      a {
+         min-width: 180px;
+      }
+   }
+}

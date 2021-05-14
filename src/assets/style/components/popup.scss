@@ -1,0 +1,483 @@
+.popup {
+   position: fixed;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+   top: 0;
+   left: 0;
+   z-index: 10;
+   opacity: 0;
+   visibility: hidden;
+   overflow-y: auto;
+   overflow-x: hidden;
+   transition: all 0.8s ease 0s;
+   &__body {
+      min-height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 10px;
+   }
+   &__content {
+      background-color: #022b49;
+      color: #c2c2c2;
+      /* border-radius: 7%; */
+      border-radius: 0.45rem;
+      box-shadow: 4px 4px 30px rgba(75, 102, 171, 0.2);
+      border: 2px solid #fff;
+      // background-color: #fff;
+      // color: #424242;
+      // max-width: 1140px;
+      width: 700px;
+      position: relative;
+      transition: all 0.8s ease 0s;
+      opacity: 0;
+      transform: translate(0px, -100%);
+      form {
+         margin: 0 auto;
+         padding: 0px 50px;
+         p {
+            font-size: 22px;
+            font-weight: 200;
+            text-align: left;
+            padding: 10px 0px 20px 0px;
+
+            color: white;
+         }
+         h6 {
+            color: red;
+            font-size: 18px;
+            font-weight: 600;
+            padding: 0px 0px 20px 0px;
+            text-align: left;
+         }
+         input[type="text"] {
+            width: 100%;
+            height: 30px;
+            font-size: 20px;
+            font-weight: 200;
+            padding: 5px;
+         }
+         textarea {
+            background: #fff;
+            border: 2px solid #a9c358; /* Параметры рамки */
+            padding: 10px; /* Поля */
+            width: 100%; /* Ширина */
+            height: 200px; /* Высота */
+            box-sizing: border-box; /* Алгоритм расчёта ширины */
+            font-size: 20px;
+         }
+      }
+   }
+   &__bcg {
+   }
+   &__close {
+      position: absolute;
+      right: 20px;
+      top: 20px;
+      font-size: 40px;
+      color: black;
+   }
+   &__title {
+      color: #424242;
+      font-size: 31px;
+      font-weight: 500;
+      margin: 18px 0px 0px 0px;
+
+      h3 {
+         color: white;
+         margin: 0px 0px 0px 0px;
+      }
+   }
+   &__block {
+      padding: 62px 0 0 0px;
+   }
+}
+.popup-name {
+   color: #fff;
+   font-size: 24px;
+   font-weight: 300;
+   margin: 25px auto;
+   max-width: 400px;
+}
+.popup-btn {
+   display: flex;
+   margin: 0px 60px 40px 60px;
+}
+.popup:target {
+   opacity: 1;
+   visibility: visible;
+}
+
+.popup:target .popup__content {
+   transform: translate(0px, 0px);
+   opacity: 1;
+}
+
+// !Для JS
+.popup.open {
+   opacity: 1;
+   visibility: visible;
+}
+.popup.open .popup__content {
+   transform: translate(0px, 0px);
+   opacity: 1;
+}
+// !-----------------------—
+.popup__area {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+}
+.checkbox {
+   margin-bottom: 1.2em;
+
+   span {
+      margin: 0px 20px;
+   }
+}
+
+/* для элемента input c type="checkbox" */
+.custom-checkbox > input {
+   position: absolute;
+   z-index: -1;
+   opacity: 0;
+}
+
+/* для элемента label, связанного с .custom-checkbox */
+.custom-checkbox > span {
+   display: inline-flex;
+   align-items: center;
+   user-select: none;
+}
+
+/* создание в label псевдоэлемента before со следующими стилями */
+.custom-checkbox > span::before {
+   content: "";
+   display: inline-block;
+   width: 1em;
+   height: 1em;
+   flex-shrink: 0;
+   flex-grow: 0;
+   border: 1px solid #adb5bd;
+   border-radius: 0.25em;
+   margin-right: 0.5em;
+   background-repeat: no-repeat;
+   background-position: center center;
+   background-size: 50% 50%;
+}
+
+/* стили при наведении курсора на checkbox */
+.custom-checkbox > input:not(:disabled):not(:checked) + span:hover::before {
+   border-color: #b3d7ff;
+}
+
+/* стили для активного чекбокса (при нажатии на него) */
+.custom-checkbox > input:not(:disabled):active + span::before {
+   background-color: #b3d7ff;
+   border-color: #b3d7ff;
+}
+
+/* стили для чекбокса, находящегося в фокусе */
+.custom-checkbox > input:focus + span::before {
+   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+/* стили для чекбокса, находящегося в фокусе и не находящегося в состоянии checked */
+.custom-checkbox > input:focus:not(:checked) + span::before {
+   border-color: #80bdff;
+}
+
+/* стили для чекбокса, находящегося в состоянии checked */
+.custom-checkbox > input:checked + span::before {
+   border-color: #0b76ef;
+   background-color: #0b76ef;
+   background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23fff' d='M6.564.75l-3.59 3.612-1.538-1.55L0 4.26 2.974 7.25 8 2.193z'/%3e%3c/svg%3e");
+}
+
+/* стили для чекбокса, находящегося в состоянии disabled */
+.custom-checkbox > input:disabled + span::before {
+   background-color: #e9ecef;
+}
+.check {
+   display: flex;
+   justify-content: center;
+   p {
+      margin: 0px 0px 20px 0px;
+   }
+}
+
+.example-2 .btn-tertiary {
+   color: #555;
+   padding: 0;
+   line-height: 40px;
+   width: 200px;
+   margin: auto;
+   display: block;
+   border: 2px solid #555;
+}
+.example-2 .btn-tertiary:hover,
+.example-2 .btn-tertiary:focus {
+   color: #888;
+   border-color: #888;
+}
+.example-2 .input-file {
+   width: 0.1px;
+   height: 0.1px;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   z-index: -1;
+}
+.example-2 .input-file + .js-labelFile {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   padding: 0 10px;
+   cursor: pointer;
+   color: #022b49;
+   background: transparent;
+}
+.example-2 .input-file + .js-labelFile {
+}
+.example-2 .input-file + .js-labelFile.has-file .icon:before {
+   content: "\f00c";
+   color: #5aac7b;
+}
+.form-group {
+   p {
+      margin: 0px 0px 20px 0px;
+   }
+   svg {
+      width: 20px;
+      margin: 10px 10px 0px 0px;
+   }
+}
+// !FGHJKL:KJHGFGhjkl;LKJHgffghjkl;lkjhgfhjkl;
+
+.modal-vue .overlay {
+   position: fixed;
+   z-index: 9998;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-vue .modal {
+   position: relative;
+   width: 300px;
+   z-index: 9999;
+   margin: 0 auto;
+   padding: 20px 30px;
+   background-color: #fff;
+}
+
+.modal-vue .close {
+   position: absolute;
+   top: 10px;
+   right: 10px;
+}
+.form {
+   display: flex;
+   flex-direction: column;
+   &__input {
+      display: flex;
+   }
+   &__cross {
+      margin: 20px 0px 0px 0px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p {
+         margin: 0px 0px 20px 0px;
+      }
+   }
+
+   &__barr {
+      text-align: left;
+   }
+   input[type="number"] {
+      background: transparent;
+      border: none;
+      width: 63px;
+      height: 25px;
+      padding: 5px 0px 5px 25px;
+      border: 1px solid #9c9c9c;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 20px;
+      letter-spacing: 0.02em;
+      color: #ffffff;
+   }
+   &__section {
+      display: flex;
+      text-align: left;
+      margin: 0px 0px 22px 0px;
+   }
+   &__section2 {
+      display: flex;
+      text-align: left;
+      margin: 0px 0px 22px 0px;
+   }
+
+   &__row {
+      display: flex;
+      text-align: left;
+      flex: 1 1 auto;
+   }
+
+   &__colorrow {
+      text-align: left;
+   }
+   &__btn {
+      margin: 9px auto 0px auto;
+   }
+}
+.checkbox-other {
+   display: block;
+   margin: 0 0 22px 0;
+   cursor: pointer;
+   user-select: none;
+   position: relative;
+}
+.checkbox-other input[type="checkbox"] {
+   position: absolute;
+   z-index: -1;
+   opacity: 0;
+   display: block;
+   width: 0;
+   height: 0;
+}
+.checkbox-other input[type="radio"] {
+   position: absolute;
+   z-index: -1;
+   opacity: 0;
+   display: block;
+   width: 0;
+   height: 0;
+}
+.checkbox-other .span {
+   line-height: 22px;
+   content: " ";
+   color: #000;
+   display: inline-block;
+   margin-right: 20px;
+   position: relative;
+   text-align: center;
+   text-indent: 0px;
+   width: 30px;
+   height: 30px;
+   vertical-align: middle;
+}
+.span::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 10px;
+   height: 10px;
+}
+.checkbox-other .row-span {
+   content: " ";
+   color: #000;
+   display: inline-block;
+   margin-right: 15px;
+   position: relative;
+   text-align: center;
+   text-indent: 0px;
+   width: 20px;
+   height: 20px;
+   background: transparent;
+   border: 1px solid #9c9c9c;
+   border-image: initial;
+   vertical-align: middle;
+}
+
+// .checkbox-other .span:before {
+
+// }
+// label:nth-child(1) > .span::before {
+//    background: #fff;
+// }
+// label:nth-child(2) > .span::before {
+//    background: #7e6767;
+// }
+// label:nth-child(3) > .span::before {
+//    background: #656773;
+// }
+// .row-span::before {
+//    content: " ";
+//    color: #000;
+//    display: inline-block;
+//    margin-right: 15px;
+//    position: relative;
+//    text-align: center;
+//    text-indent: 0px;
+//    width: 20px;
+//    height: 20px;
+//    background: #fff;
+//    border: 1px solid black;
+//    border-image: initial;
+//    vertical-align: middle;
+// }
+// .row-span:before:checked {
+//    background-size: contain;
+//    background-image: url("~@/assets/img/mark.png") !important;
+// }
+/* Checked */
+.checkbox-other input[type="checkbox"]:checked + .span {
+   width: 30px;
+   height: 30px;
+   background: transparent;
+
+   &::before {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 36px;
+      height: 36px;
+      // padding: 18px;
+      border: 2px solid black;
+      transition: 0ms;
+   }
+}
+.checkbox-other input[type="radio"]:checked + .span {
+   width: 30px;
+   height: 30px;
+   background: transparent;
+
+   &::before {
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      width: 36px;
+      height: 36px;
+      // padding: 18px;
+      border: 2px solid black;
+      transition: 0ms;
+   }
+}
+.checkbox-other input[type="checkbox"]:checked + .row-span {
+   background-size: 13px 11px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url("~@/assets/img/mark.png");
+   transition: 0ms;
+   // width: 13px;
+   // height: 11px;
+}
+.checkbox-other input[type="radio"]:checked + .row-span {
+   background-size: 13px 11px;
+   background-repeat: no-repeat;
+   background-position: center;
+   background-image: url("~@/assets/img/mark.png");
+   transition: 0ms;
+   // width: 13px;
+   // height: 11px;
+}

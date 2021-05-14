@@ -1,0 +1,100 @@
+.header {
+   left: 0;
+   // margin-left: 224px;
+   grid-area: header;
+   &__wrap {
+      display: flex;
+      align-items: center;
+   }
+   &__block {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      z-index: 100;
+      padding: 0 1.85rem 0;
+      background-color: #fff;
+      transition: all 0.2s ease-in-out;
+      border: none;
+      box-shadow: 0 15px 20px -20px rgba(75, 102, 171, 0.1), 0 0 15px rgba(74, 102, 171, 0.06);
+      font-weight: 500;
+      justify-content: space-between;
+   }
+
+   &__bar {
+      svg {
+         width: 24px;
+         height: 100%;
+         cursor: pointer;
+      }
+      display: flex;
+      i {
+         @extend %fa-icon;
+         @extend .fas;
+      }
+   }
+   &__bar-mini {
+      display: none;
+   }
+   &__arrow {
+      display: none;
+      svg {
+         width: 24px;
+         margin: 0px 20px 0px 0px;
+         height: 100%;
+         cursor: pointer;
+      }
+   }
+}
+.header-exit {
+   display: flex;
+   cursor: pointer;
+   max-height: 100%;
+   align-items: center;
+   svg {
+      width: 25px;
+      margin: 0px 10px 0px 0px;
+   }
+}
+.header-person {
+   cursor: pointer;
+   display: flex;
+   align-items: center;
+   margin: 0px 20px 0px 0px;
+   svg {
+      width: 25px;
+      margin: 0px 10px 0px 0px;
+   }
+}
+@media (max-width: 1024px) {
+   .header {
+      &__arrow {
+         display: block;
+      }
+      &__bar {
+         display: none;
+      }
+      &__bar-mini {
+         display: block;
+         top: 11px;
+         right: 36px;
+         position: absolute;
+         svg {
+            width: 24px;
+            height: 100%;
+            cursor: pointer;
+         }
+      }
+   }
+}
+@media (max-width: 600px) {
+   .header-exit {
+      a {
+         display: none;
+      }
+   }
+   .header-person {
+      a {
+         display: none;
+      }
+   }
+}

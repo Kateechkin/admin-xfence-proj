@@ -1,0 +1,88 @@
+@import "./view/home.scss";
+@import "./view/product.scss";
+@import "./view/product-add.scss";
+@import "./view/client.scss";
+@import "./view/login.scss";
+@import "./view/person.scss";
+@import "./view/photo.scss";
+@import "./view/colors.scss";
+@import "./components/header.scss";
+@import "./components/modal.scss";
+@import "./components/popup.scss";
+@import "./components/nav.scss";
+@import "./fonts/fontawesome.scss";
+// @import "./fonts/solid.scss";
+// @import "./fonts/brands.scss";
+// @import "./components/nav.scss";
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap");
+*,
+*:after,
+*:before {
+   box-sizing: border-box;
+   padding: 0;
+   margin: 0;
+   transition: 0.3s ease-in-out;
+}
+
+html {
+   scroll-behavior: smooth;
+   background-color: black;
+}
+
+body {
+   background-color: #fff;
+   font-family: "Montserrat", sans-serif;
+   width: 100%;
+   font-size: 1rem;
+   font-weight: 300;
+   line-height: 1.5;
+   color: #29323a;
+   background-color: #f9fbfd;
+   margin: 0 auto;
+   // min-height: 100vh;
+}
+button {
+   padding: 0;
+   border: none;
+   font: inherit;
+   color: inherit;
+   background-color: transparent;
+   /* отображаем курсор в виде руки при наведении; некоторые
+   считают, что необходимо оставлять стрелочный вид для кнопок */
+   cursor: pointer;
+}
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+}
+
+.container {
+   max-width: 1440px;
+   margin: 0 auto;
+   padding: 0px 20px;
+}
+a {
+   text-decoration: none;
+   color: #424242;
+}
+
+ol,
+ul {
+   list-style: none;
+}
+.success {
+   background-color: #3fff51;
+}
+.danger {
+   background-color: #ff144d;
+}
+.info {
+   background-color: #ffec99;
+}
+.breadcrumps {
+   cursor: pointer;
+   text-align: left;
+   p {
+      margin: 20px 0px 0px 20px;
+   }
+}
